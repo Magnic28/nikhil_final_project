@@ -1,0 +1,68 @@
+.hotels-header{
+    width: 100%;
+    height: 60px;
+    background-color: wheat;
+    display: flex;
+    justify-content: center;
+}
+
+.hotels-filters{
+    width: 100%;
+    padding: 30px;
+    
+    /* height: 60px; */
+    background-color: aquamarine;
+display: flex;
+/* flex-direction: row; */
+}
+
+
+.hotels-container{
+    /* width: 30%; */
+    display: flex;
+    flex-direction: row;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    /* height: 80vh; */
+    padding: 30px;
+    background-color: rgb(218, 216, 216);
+    justify-content: space-between;
+    
+    /* justify-content: center; */
+}
+
+.hotel-card{
+    width: 28%;
+    padding: 20px;
+    border: solid;
+    /* height: 200px; */
+    background-color: white;
+    border-radius: 20px;
+    /* display: flex; */
+    flex-direction: row;
+}
+
+.pimg 
+{
+    width: 200px;
+    transition: .4s;
+}
+
+p{
+    padding: 5px;
+}
+
+.facilities{
+    color: blue;
+    font-size: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+

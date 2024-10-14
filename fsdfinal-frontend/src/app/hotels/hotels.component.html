@@ -1,0 +1,68 @@
+<!-- <p>hotels works!</p> -->
+<div class="hotels-header">
+    <H1>Hotels Website</H1>
+
+</div>
+
+<div class="hotels-filters">
+    <!-- Filters: <input type="text" class="filerinput" placeholder="City"> -->
+    <form class="form" [formGroup]="filterForm">
+
+        <input type="text" class="inp" placeholder="Enter City Name" [formControl]="city">
+    </form>
+    <input type="button" value="Filter" (click)="filterResults()">
+</div>
+
+<div class="hotels-container">
+    <div class="hotels-container">
+
+        @for (hotels of allHotelResponse?.payload; track $index) {
+        <div class="hotel-card">
+            <!-- src="https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o=" -->
+            <h1>{{hotels.name}}</h1>
+            <p></p>
+            <img class="pimg" [src]=hotels.imageUrl alt="Image">
+            <p><i class="fa-solid fa-dollar-sign dollar"> {{hotels.roomPrice}}</i></p>
+            <!-- <p>Room Price : $ 3000</p> -->
+            <p>Pune</p>
+            <p>{{hotels.description}}</p>
+            <p>{{hotels.email}}</p>
+            <div class="facilities">
+                @if (hotels.wifi) {
+                <i class="fa-solid fa-wifi"></i>
+                }
+                @if (hotels.gym) {
+                <i class="fa-solid fa-dumbbell"></i>
+                }
+                @if (hotels.pool) {
+                <i class="fa-solid fa-person-swimming"></i>
+                }
+            </div>
+
+
+        </div>
+        }
+        <!-- ------------- -->
+
+        <!-- <div class="hotel-card">
+
+            <h1>Nikhil Hotel</h1>
+            <p></p>
+            <img class="pimg"
+                src="https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o="
+                alt="Image">
+            <p><i class="fa-solid fa-dollar-sign dollar"> 3000</i></p>
+            <p>Room Price : $ 3000</p>
+            <p>Pune</p>
+            <p>this is an amazing hotel</p>
+            <p>{{"nikhilhotel@gmail.com"}}</p>
+            <div class="facilities">
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-dumbbell"></i>
+                <i class="fa-solid fa-person-swimming"></i>
+            </div>
+
+
+        </div> -->
+    </div>
+</div>

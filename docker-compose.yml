@@ -1,0 +1,32 @@
+version: '3'
+
+networks:
+  fsdfinal-network:
+    driver: bridge
+
+services:
+  angular-app:
+    image: fsdfinal-frontend-img 
+    container_name: fsdfinal-frontend-cont
+    build:
+      context: ./fsdfinal-frontend 
+      dockerfile: Dockerfile 
+    ports:
+      - "81:80"  
+    depends_on:
+    - spring-boot-app  
+    networks:
+      - fsdfinal-network
+
+  spring-boot-app:
+    image: fsdfinal-backend-img  
+    container_name: fsdfinal-backend-cont
+    build:
+      context: ./fsdfinal-backend
+      dockerfile: Dockerfile 
+    ports:
+      - "8081:8080" 
+    networks:
+      - fsdfinal-network
+
+
