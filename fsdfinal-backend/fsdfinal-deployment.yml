@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-deployment
+  labels:
+    app: spring-boot-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: spring-boot-deployment
+  template:
+    metadata:
+      labels:
+        app: spring-boot-deployment
+    spec:
+      containers:
+        - name: spring-boot-cont
+          image: magnic28/fsdfinal-backend-img:2.0
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-service
+spec:
+  type: LoadBalancer  # Use LoadBalancer if you want external access
+  selector:
+    app: spring-boot-deployment
+  ports:
+    - protocol: TCP
+      port: 8080     # Exposed service port
+      targetPort: 8080  # Container port where Spring Boot app is running

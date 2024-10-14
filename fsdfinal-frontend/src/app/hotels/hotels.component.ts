@@ -17,6 +17,7 @@ export class HotelsComponent implements OnInit {
 
   allHotelResponse: AllHotelsResponse | undefined
 
+filterCity: String ="abc"
 
   city = new FormControl("", [])
 
@@ -42,7 +43,11 @@ export class HotelsComponent implements OnInit {
 
     this.allHotelResponse?.payload
     console.log(this.filterForm.value)
-    
+    if(this.filterForm.value.city){
+      this.filterCity=this.filterForm.value.city
+    }
+
+    // for(allHotelResponse.payload)
   }
 
 }

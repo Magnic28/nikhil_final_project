@@ -10,8 +10,8 @@ export class HotelService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // getAllHotelsURL="http://localhost:8080/api/v1/hotels"
-  getAllHotelsURL = "/api/v1/hotels"
+  getAllHotelsURL="http://localhost:8080/api/v1/hotels"
+  // getAllHotelsURL = "/api/v1/hotels"
   // /api/v1/
 
   getAllHotels(): Observable<any> {
